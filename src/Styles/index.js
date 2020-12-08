@@ -1,21 +1,32 @@
-function getColor_streetlights(d) {
-switch  (d) {   case '1   '    :
+function getColor_grittingroutes(d) {
+switch  (d) {   case 'Trailer'    :
+                    return '#ff7f00'    
+                case 'Supervisor'    :
+                    return '#6a3d9a'
+                case 'Primary'    :
+                    return '#e31a1c'  
+                case 'Other'    :
                     return '#33a02c'    
-                case '2   '    :
-                    return '#ff7f00'
-                case '3   '    :
-                    return '#e31a1c'    
             }
 }
-function streetlightingStyle (feature) {
+function grittingroutesStyle (feature) {
 return {
-    color: '#000',
+    color: getColor_grittingroutes (feature.properties.classification),
     weight: 2,
     opacity: 1,
-    fillColor: getColor_streetlights (feature.properties.raise_new_job),
-    fillOpacity: 0.5
     }
 }
+
+const gritboxStyle = {
+    radius: 6,
+    color: '#000',
+    weight:2,
+    opacity:1,
+    fillColor: '#cab2d6',
+    fillOpacity:1
+}
+
 export {
-streetlightingStyle
+grittingroutesStyle,
+gritboxStyle
 }

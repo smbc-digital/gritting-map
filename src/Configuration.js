@@ -1,6 +1,6 @@
 import Leaflet from 'leaflet'
-import { streetLightingPopup} from './Popups' //devsitesPopup, notdevsitesPopup}
-import { streetlightingStyle} from './Styles'
+import { grittingroutesPopup, gritboxPopup} from './Popups'
+import { grittingroutesStyle, gritboxStyle} from './Styles'
 
 const Configuration = {
     Map: {
@@ -15,26 +15,26 @@ const Configuration = {
     },
     DynamicData: 
     [
-        //{
-          //  key: 'Tree Preservation Orders',
-            //url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=trees:tpo_merged&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
-            //layerOptions: {
-            //    onEachFeature: tpoPopup,
-            //    maxZoom: 2,
-            //    style: tpoStyle
-            //},
-            //displayOverlay: true,
-            //visibleByDefault: true
-        //},
+        {
+            key: 'Gritting Routes',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:gritting_routes&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                onEachFeature: grittingroutesPopup,
+                maxZoom: 2,
+                style: grittingroutesStyle
+            },
+            displayOverlay: true,
+            visibleByDefault: true
+        },
 
         {
-            key: 'Street Lights',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:street_lights_reporting&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            key: 'Grit Boxes',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:grit_box_highways&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
-                maxZoom: 16,
-                onEachFeature: streetLightingPopup,
+                maxZoom: 2,
+                onEachFeature: gritboxPopup,
                 pointToLayer: (feature, latlng) => {
-                    return Leaflet.circleMarker (latlng, streetlightingStyle (feature))
+                    return Leaflet.circleMarker (latlng, gritboxStyle (feature))
 
                 }
             },
