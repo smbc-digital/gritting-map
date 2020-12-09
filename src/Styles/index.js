@@ -12,7 +12,7 @@ switch  (d) {   case 'Trailer'    :
 function grittingroutesStyle (feature) {
 return {
     color: getColor_grittingroutes (feature.properties.classification),
-    weight: 2,
+    weight: 4,
     opacity: 1,
     }
 }
