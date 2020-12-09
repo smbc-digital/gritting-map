@@ -5,7 +5,7 @@ import { grittingroutesStyle, gritboxStyle} from './Styles'
 const Configuration = {
     Map: {
         StartingLatLng: [53.391067,-2.1197936],
-        StartingZoom: 2,
+        StartingZoom: 18,
         FullscreenControl: true,
         DisplayLayerControls: true,
         DisplayGrayScale: true,
@@ -20,7 +20,7 @@ const Configuration = {
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:gritting_routes&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
                 onEachFeature: grittingroutesPopup,
-                maxZoom: 2,
+                maxZoom: 17,
                 style: grittingroutesStyle
             },
             displayOverlay: true,
@@ -33,8 +33,9 @@ const Configuration = {
             layerOptions: {
                 maxZoom: 2,
                 onEachFeature: gritboxPopup,
+                style: gritboxStyle,
                 pointToLayer: (feature, latlng) => {
-                    return Leaflet.circleMarker (latlng, gritboxStyle (feature))
+                    return Leaflet.circleMarker (latlng)
 
                 }
             },

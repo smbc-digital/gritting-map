@@ -1,6 +1,6 @@
 function getColor_grittingroutes(d) {
 switch  (d) {   case 'Trailer'    :
-                    return '#ff7f00'    
+                    return '#ffff99'    
                 case 'Supervisor'    :
                     return '#6a3d9a'
                 case 'Primary'    :
@@ -22,7 +22,7 @@ const gritboxStyle = {
     color: '#000',
     weight:2,
     opacity:1,
-    fillColor: '#cab2d6',
+    fillColor: '#ff7f00',
     fillOpacity:1
 }
 
