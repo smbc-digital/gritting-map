@@ -20,7 +20,7 @@ const Configuration = {
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:gritting_routes&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
                 onEachFeature: grittingroutesPopup,
-                maxZoom: 17,
+                maxZoom: 16,
                 style: grittingroutesStyle
             },
             displayOverlay: true,
