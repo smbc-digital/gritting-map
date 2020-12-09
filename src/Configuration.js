@@ -5,7 +5,7 @@ import { grittingroutesStyle, gritboxStyle} from './Styles'
 const Configuration = {
     Map: {
         StartingLatLng: [53.391067,-2.1197936],
-        StartingZoom: 16,
+        StartingZoom: 17,
         FullscreenControl: true,
         DisplayLayerControls: true,
         DisplayGrayScale: true,
