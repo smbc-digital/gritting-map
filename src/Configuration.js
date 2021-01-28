@@ -1,6 +1,6 @@
 import Leaflet from 'leaflet'
 import { grittingroutesPopup, gritboxPopup} from './Popups'
-import { grittingroutesStyle, gritboxStyle} from './Styles'
+import { grittingroutesStyle, gritboxesStyle} from './Styles'
 
 const Configuration = {
     Map: {
@@ -28,12 +28,12 @@ const Configuration = {
         },
 
         {
-            key: 'Grit Boxes',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:grit_box_highways&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            key: 'Highway Grit Boxes',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:grit_boxes&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
                 maxZoom: 2,
                 onEachFeature: gritboxPopup,
-                style: gritboxStyle,
+                style: gritboxesStyle,
                 pointToLayer: (feature, latlng) => {
                     return Leaflet.circleMarker (latlng)
 
