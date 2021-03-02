@@ -1,40 +1,35 @@
 const grittingroutesPopup = (feature, layer) => {
   
-  const content = `<div class="item"><i class="fa fa-road" aria-hidden="true"></i><p class="title">Gritting Routes</p>
-  <p></p>
-  <p class="info">Route Type: ${feature.properties.classification}</p>
-  <p class="info">Route No: ${feature.properties.route}</p>
-  <p class="info">Route Description: ${feature.properties.name}</p>
-
-  
-  </div>`
+  const content = `<div class="smbc-map__item">
+  <div class="smbc-map__item__header__block">
+    <i class="fa fa-road smbc-map__item__header__block__icon" aria-hidden="true"></i>
+    <span class="smbc-map__item__header__block__title">Gritting Routes</span>
+  </div>
+  <div class="smbc-map__item__body">
+    <p>Route Type: ${feature.properties.classification}</p>
+    <p>Route No: ${feature.properties.route}</p>
+    <p>Route Description: ${feature.properties.name}</p>
+  </div>
+</div>`
  
   layer.bindPopup(content)
  }
 
 const gritboxPopup = (feature, layer) => {
  
- const content = `<div class="item"><i class="fa fa-snowflake-o" aria-hidden="true"></i><p class="title">Grit Bins</p>
- <p></p>
- <p class="info">Street: ${feature.properties.street}</p>
- <p class="info">Position: ${feature.properties.position}</p>
-  
- </div>`
+ const content = `<div class="smbc-map__item">
+  <div class="smbc-map__item__header__block">
+    <i class="fa fa-snowflake-o smbc-map__item__header__block__icon" aria-hidden="true"></i>
+    <span class="smbc-map__item__header__block__title">Grit Bins</span>
+  </div>
+  <div class="smbc-map__item__body">
+    <p>Street: ${feature.properties.street}</p>
+    <p>Position: ${feature.properties.position}</p>
+  </div>
+</div>`
  
  layer.bindPopup(content)
 }
-
-//function streetLightingPopup(feature, layer) {
-//  if (feature.properties.raise_new_job = ("1   ")) {
-//    var content = "this is writing";
-//  } 
-//
-//  else if (feature.properties.raise_new_job = ("2   ")) {
-//    var content = "this is different writing";
-//  }
-//
-//layer.bindPopup(content)
-//}
 
 export {
   grittingroutesPopup,
